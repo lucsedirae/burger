@@ -1,5 +1,5 @@
 //*Dependencies
-const connection = require("./connection");
+const connection = require("../config/connection.js");
 
 //*Helper function:
 //*Question mark function takes in an integer representing number of values needed in a SQL query. It creates a string with that many question marks.
@@ -72,13 +72,10 @@ const orm = {
     });
   },
 
-  delete: function(table, col, val, cb) {
+  delete: function(table, condition, cb) {
     let queryString = "DELETE FROM " + table;
-    
     queryString += " WHERE ";
-    queryString += col;
-    queryString += " = ";
-    queryString += val;
+    queryString += condition;
 
     console.log(queryString);
     connection.query(queryString, function(err, res){

@@ -4,10 +4,10 @@ const mysql = require("mysql");
 //*Sets up MySQL connection
 const connection = mysql.createConnection({
     host: "localhost",
-    port: 3306,
+    port: 3000,
     user: "root",
     password: "",
-    database: "cat_db"
+    database: "burgers_db"
 });
 
 //*Initiates MySQL connection

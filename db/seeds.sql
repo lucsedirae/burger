@@ -1,13 +1,13 @@
 USE burgers_db;
 
-INSERT INTO burgers (burger)
-VALUES ("Bologna Burger");
+INSERT INTO burgers (burger, devoured)
+VALUES ("Bologna Burger", false);
 
-INSERT INTO burgers (burger)
-VALUES ("Flying Squirrel");
+INSERT INTO burgers (burger, devoured)
+VALUES ("Flying Squirrel", false);
 
-INSERT INTO burgers (burger)
-VALUES ("Big Mike");
+INSERT INTO burgers (burger, devoured)
+VALUES ("Big Mike", false);
 
-INSERT INTO burgers (burger)
-VALUES ("Barnyard Brawl");
+INSERT INTO burgers (burger, devoured)
+VALUES ("Barnyard Brawl", false);
