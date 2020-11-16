@@ -31,12 +31,12 @@ function objToSql(ob) {
 }
 
 //*The ORM defines dynamic SQL query strings that can be accessed from elsewhere in the app. This 
-const orm = {
+let orm = {
   all: function (tableInput, cb) {
     let queryString = "SELECT * FROM " + tableInput + ";";
-    connection.query(queryString, function (err, res) {
+    connection.query(queryString, function (err, result) {
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   },
 
@@ -51,14 +51,14 @@ const orm = {
     queryString += ") ";
 
     console.log(queryString);
-    connection.query(queryString, vals, function (err, res) {
+    connection.query(queryString, vals, function (err, result) {
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   },
 
   update: function (table, objColVals, condition, cb) {
-    let queryString = "UPDATE" + table;
+    let queryString = "UPDATE " + table;
 
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -66,9 +66,9 @@ const orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function (err, res) {
+    connection.query(queryString, function (err, result) {
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   },
 
@@ -78,9 +78,9 @@ const orm = {
     queryString += condition;
 
     console.log(queryString);
-    connection.query(queryString, function(err, res){
+    connection.query(queryString, function(err, result){
       if (err) throw err;
-      cb(res);
+      cb(result);
     });
   }
 };

@@ -4,12 +4,12 @@ $(function() {
         let newDevoured = $(this).data("newdevoured");
 
         let newDevouredState = {
-            devoured: newDevoured
+            devoured: newDevoured,
         };
 
         $.ajax("/api/burgers/" + id, {
             type: "PUT",
-            data: newDevouredState
+            data: newDevouredState,
         }).then(
             function() {
                 console.log("changed devoured to", newDevoured);
@@ -22,7 +22,7 @@ $(function() {
         event.preventDefault();
 
         let newBurger = {
-            name: $("#ca").val().trim(),
+            burger_name: $("#ca").val().trim(),
             devoured: $("[name=devoured]:checked").val().trim()
         };
 
@@ -38,9 +38,10 @@ $(function() {
     });
 
     $(".delete-burger").on("click", function(event) {
+        event.preventDefault();
         let id = $(this).data("id");
 
-        $.ajax("/api/cats" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "DELETE"
         }).then(
             function() {
