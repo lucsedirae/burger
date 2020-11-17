@@ -1,4 +1,4 @@
-USE burgers_db;
+USE v4469xjwuyt7kjrt;
 
 INSERT INTO burgers (burger_name, devoured)
 VALUES ("Bologna Burger", false);

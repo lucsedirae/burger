@@ -3,6 +3,8 @@ const mysql = require("mysql");
 
 let connection;
 
+//*Sets up MySQL connection for remote database or local environment
+
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -14,19 +16,6 @@ if (process.env.JAWSDB_URL) {
         database: "burgers_db"    
     });
 };
-
-
-
-
-
-//*Sets up MySQL connection
-// const connection = mysql.createConnection({
-//     host: "localhost",
-//     port: 3306,
-//     user: "root",
-//     password: "",
-//     database: "burgers_db"
-// });
 
 //*Initiates MySQL connection
 connection.connect(function(err){

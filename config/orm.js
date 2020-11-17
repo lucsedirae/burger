@@ -75,7 +75,7 @@ let orm = {
   delete: function(table, condition, cb) {
     let queryString = "DELETE FROM " + table;
     queryString += " WHERE ";
-    queryString += condition;
+    queryString += condition + ";";
 
     console.log(queryString);
     connection.query(queryString, function(err, result){
