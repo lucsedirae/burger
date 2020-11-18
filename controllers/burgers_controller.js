@@ -48,7 +48,7 @@ router.delete("/api/burgers/:id", function(req, res){
     let condition = "id = " + req.params.id;
 
     console.log("Ground control to Major Tom");
-    burger.delete(condition, function(res) {
+    burger.delete(condition, function(result) {
         if(res.affectedRows == 0) {
             return res.status(404).end();
         } else {
