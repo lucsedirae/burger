@@ -11,7 +11,7 @@
 <h2>Burgers That Need Eating</h2>
 
 <ul>
-  {{#each burgers}}
+  <strong>{{#each burgers}}</strong>
   {{#unless devoured}}
   {{this.burger_name}}
   {{> burgers/burger-block devoured=true}}
